@@ -40,7 +40,7 @@ std::string infix2postfix(std::string infix) {
       oper.push(infix[i]);
       continue;
     }
-    
+
     if (prior == 1) {
       while (oper.get() != '(')
         postfix = postfix + oper.pop() + ' ';
@@ -53,10 +53,10 @@ std::string infix2postfix(std::string infix) {
       oper.push(infix[i]);
     }
   }
-  
+
   while (!oper.isEmpty())
     postfix = postfix + oper.pop() + ' ';
   postfix.pop_back();
-  
+
   return postfix;
 }
